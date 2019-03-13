@@ -1,0 +1,37 @@
+body { 
+    background-image: url("./../images/BG-2.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: 100% 100%;
+    overflow: auto;
+    z-index: -1px; 
+    height: 700px;
+   
+    
+  }
+ 
+  
+ 
+  .container{
+    background-repeat: no-rep;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    width: 70%;
+    font-size: 30px;
+    color: rgb(226, 31, 233);
+    line-height: 3em;
+  
+  }
+  h1,h3 {
+  
+    font-weight: bold;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-size: 25px;
+    text-align: center;
+    line-height: 2em;
+    /* background-image: url("./../images/BG.jpg"); */
+    /* background-repeat: no-repeat, repeat; */
+    color: rgb(226, 31, 233);
+  }
+  
+  
