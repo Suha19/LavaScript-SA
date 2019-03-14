@@ -69,10 +69,15 @@ if (choosenword.indexOf(keyword) > -1) {
       }
           
           // console.log(wrongword);
-  }     
+  }    
+  if((rightword== choosenword)||(wronglettercount>11)){
+    var playagain = confirm("Do you want to play?");
+      if (playagain == true) {
+        window.location.reload(false);
+        
+    } 
+    else {}
+    }   
     
 });
-
-
-// replace underscore with the right guess
 
