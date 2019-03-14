@@ -11,37 +11,41 @@
 
 
 document.write('<bgsound src="./assets/images/BaseAudioContext.mp3" loop="1">');
-const words =['michael','madona','wham','prince','whitney'];
+const words =['michael','Lionel','wham','prince','whitney'];
 let underScores = [];
 let wrongword = [];
 let rightword = [];
+let wronglettercount=0;
 
-let computerchoice = Math.floor(Math.random() * words.length);
 let docunderscores = document.getElementsByClassName("underscores");
 let docrightword = document.getElementsByClassName("rightword");
 let docwrongword = document.getElementsByClassName("wrongword");
+
+let computerchoice = Math.floor(Math.random() * words.length);
 let choosenword = words[computerchoice];
 
 console.log(choosenword);
 
 // create underscore array
+
 let creatUnderScore = () => {
   for (let i=0; i<choosenword.length; i++){
-      underScores.push("_");
+      underScores.push('_');
       }
-    docunderscores[0].innerHTML= underScores;
+    docunderscores[0].innerHTML= underScores.join('');
     return underScores;
-}
+};
 console.log(creatUnderScore());
 
 // capture user guess
-document.addEventListener('keypress',(event) =>{
+
+document.addEventListener('keypress', event => {
 
   let keycode = event.keyCode;
   let keyword = String.fromCharCode(keycode);
 // console.log(keyword);
 
-if (choosenword.indexOf(keyword)>-1){
+if (choosenword.indexOf(keyword) > -1) {
     rightword.push(keyword);
     docrightword[0].innerHTML = rightword;
     underScores[choosenword.indexOf(keyword)] = keyword;
@@ -53,15 +57,22 @@ if (choosenword.indexOf(keyword)>-1){
           if(underScores.join('')== choosenword)
                   {
                     alert("you won");
-                  }
-    }
-
-
-        else{
-          wrongword.push(keyword);
-          docwrongword[0].innerHTML= wrongword;
+                  }              
+                       
+      }
+  else{
+  wrongword.push(keyword);
+  docwrongword[0].innerHTML= wrongword;
+  wronglettercount++;
+  if (wronglettercount>11){
+    alert("you have lost all guesses!");
+      }
+          
           // console.log(wrongword);
-          }       
+  }     
+    
 });
+
+
 // replace underscore with the right guess
 
